@@ -49,7 +49,7 @@ namespace Haitham_s_Project
 
                             using (DataTable orderdt = new DataTable("Orders"))
                             {
-                                using (SqlCommand ordercmd = new SqlCommand("select O.OrderID,E.FirstName, E.LastName,  P.ProductName, OrderDate,ShippedDate,S.CompanyName " +
+                                using (SqlCommand ordercmd = new SqlCommand("select O.OrderID,E.FirstName as [Employee First Name], E.LastName as [Employee Last Name],  P.ProductName, OrderDate,ShippedDate,S.CompanyName " +
                                     "as ShipVia,ShipCountry from Orders as O inner join Employees as E on O.EmployeeID = E.EmployeeID " +
                                     "inner join [Order Details] as OD on O.OrderID = OD.OrderID inner join Products as P on OD.ProductID= P.ProductID" +
                                     " inner join Shippers as S on O.ShipVia=S.ShipperID  where O.CustomerID=@CustomerID ", cn))
