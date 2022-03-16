@@ -30,6 +30,7 @@ namespace Haitham_s_Project
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customerIDTextBox = new System.Windows.Forms.TextBox();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.northwindDataSet = new Haitham_s_Project.NorthwindDataSet();
@@ -54,13 +55,6 @@ namespace Haitham_s_Project
             this.IDLabel = new System.Windows.Forms.Label();
             this.tableAdapterManager = new Haitham_s_Project.NorthwindDataSetTableAdapters.TableAdapterManager();
             this.customersTableAdapter = new Haitham_s_Project.NorthwindDataSetTableAdapters.CustomersTableAdapter();
-            this.Order_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Employee_First_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Employee_Last_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Order_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Shipped_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ship_Via = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ship_Country = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,9 +63,10 @@ namespace Haitham_s_Project
             // customerIDTextBox
             // 
             this.customerIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "CustomerID", true));
-            this.customerIDTextBox.Location = new System.Drawing.Point(293, 42);
+            this.customerIDTextBox.Location = new System.Drawing.Point(311, 23);
+            this.customerIDTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.customerIDTextBox.Name = "customerIDTextBox";
-            this.customerIDTextBox.Size = new System.Drawing.Size(164, 26);
+            this.customerIDTextBox.Size = new System.Drawing.Size(111, 20);
             this.customerIDTextBox.TabIndex = 42;
             // 
             // customersBindingSource
@@ -89,30 +84,27 @@ namespace Haitham_s_Project
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Order_ID,
-            this.Employee_First_Name,
-            this.Employee_Last_Name,
-            this.Order_Date,
-            this.Shipped_Date,
-            this.Ship_Via,
-            this.Ship_Country});
-            this.dataGridView1.Location = new System.Drawing.Point(91, 337);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(40, 200);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(607, 367);
+            this.dataGridView1.Size = new System.Drawing.Size(665, 285);
             this.dataGridView1.TabIndex = 41;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(91, 295);
+            this.label5.Location = new System.Drawing.Point(37, 172);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 25);
+            this.label5.Size = new System.Drawing.Size(63, 17);
             this.label5.TabIndex = 40;
             this.label5.Text = "Orders:";
             // 
@@ -120,54 +112,60 @@ namespace Haitham_s_Project
             // 
             this.PhoneLabel.AutoSize = true;
             this.PhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.PhoneLabel.Location = new System.Drawing.Point(492, 232);
+            this.PhoneLabel.Location = new System.Drawing.Point(502, 144);
+            this.PhoneLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(0, 25);
+            this.PhoneLabel.Size = new System.Drawing.Size(0, 17);
             this.PhoneLabel.TabIndex = 39;
             // 
             // PostalLabel
             // 
             this.PostalLabel.AutoSize = true;
             this.PostalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.PostalLabel.Location = new System.Drawing.Point(542, 171);
+            this.PostalLabel.Location = new System.Drawing.Point(535, 104);
+            this.PostalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PostalLabel.Name = "PostalLabel";
-            this.PostalLabel.Size = new System.Drawing.Size(0, 25);
+            this.PostalLabel.Size = new System.Drawing.Size(0, 17);
             this.PostalLabel.TabIndex = 38;
             // 
             // ContactTitleLabel
             // 
             this.ContactTitleLabel.AutoSize = true;
             this.ContactTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ContactTitleLabel.Location = new System.Drawing.Point(225, 232);
+            this.ContactTitleLabel.Location = new System.Drawing.Point(205, 144);
+            this.ContactTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ContactTitleLabel.Name = "ContactTitleLabel";
-            this.ContactTitleLabel.Size = new System.Drawing.Size(0, 25);
+            this.ContactTitleLabel.Size = new System.Drawing.Size(0, 17);
             this.ContactTitleLabel.TabIndex = 37;
             // 
             // ContactLabel
             // 
             this.ContactLabel.AutoSize = true;
             this.ContactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ContactLabel.Location = new System.Drawing.Point(237, 171);
+            this.ContactLabel.Location = new System.Drawing.Point(213, 104);
+            this.ContactLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ContactLabel.Name = "ContactLabel";
-            this.ContactLabel.Size = new System.Drawing.Size(0, 25);
+            this.ContactLabel.Size = new System.Drawing.Size(0, 17);
             this.ContactLabel.TabIndex = 36;
             // 
             // CompanyNameLabel
             // 
             this.CompanyNameLabel.AutoSize = true;
             this.CompanyNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CompanyNameLabel.Location = new System.Drawing.Point(266, 119);
+            this.CompanyNameLabel.Location = new System.Drawing.Point(232, 70);
+            this.CompanyNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CompanyNameLabel.Name = "CompanyNameLabel";
-            this.CompanyNameLabel.Size = new System.Drawing.Size(0, 25);
+            this.CompanyNameLabel.Size = new System.Drawing.Size(0, 17);
             this.CompanyNameLabel.TabIndex = 35;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(414, 232);
+            this.label8.Location = new System.Drawing.Point(432, 144);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 25);
+            this.label8.Size = new System.Drawing.Size(59, 17);
             this.label8.TabIndex = 34;
             this.label8.Text = "Phone:";
             // 
@@ -175,9 +173,10 @@ namespace Haitham_s_Project
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(414, 171);
+            this.label7.Location = new System.Drawing.Point(432, 104);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 25);
+            this.label7.Size = new System.Drawing.Size(100, 17);
             this.label7.TabIndex = 33;
             this.label7.Text = "Postal Code:";
             // 
@@ -185,9 +184,10 @@ namespace Haitham_s_Project
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(414, 119);
+            this.label6.Location = new System.Drawing.Point(432, 70);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 25);
+            this.label6.Size = new System.Drawing.Size(69, 17);
             this.label6.TabIndex = 32;
             this.label6.Text = "Country:";
             // 
@@ -195,18 +195,20 @@ namespace Haitham_s_Project
             // 
             this.CountryLbl.AutoSize = true;
             this.CountryLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CountryLbl.Location = new System.Drawing.Point(505, 119);
+            this.CountryLbl.Location = new System.Drawing.Point(511, 70);
+            this.CountryLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CountryLbl.Name = "CountryLbl";
-            this.CountryLbl.Size = new System.Drawing.Size(0, 25);
+            this.CountryLbl.Size = new System.Drawing.Size(0, 17);
             this.CountryLbl.TabIndex = 31;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(91, 232);
+            this.label4.Location = new System.Drawing.Point(73, 144);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(142, 25);
+            this.label4.Size = new System.Drawing.Size(105, 17);
             this.label4.TabIndex = 30;
             this.label4.Text = "Contact Title:";
             // 
@@ -214,9 +216,10 @@ namespace Haitham_s_Project
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(91, 171);
+            this.label3.Location = new System.Drawing.Point(73, 104);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 25);
+            this.label3.Size = new System.Drawing.Size(114, 17);
             this.label3.TabIndex = 29;
             this.label3.Text = "Contact Name:";
             // 
@@ -224,18 +227,19 @@ namespace Haitham_s_Project
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(91, 119);
+            this.label2.Location = new System.Drawing.Point(73, 70);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 25);
+            this.label2.Size = new System.Drawing.Size(125, 17);
             this.label2.TabIndex = 28;
             this.label2.Text = "Company Name:";
             // 
             // PrintButton
             // 
-            this.PrintButton.Location = new System.Drawing.Point(510, 777);
-            this.PrintButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PrintButton.Location = new System.Drawing.Point(579, 516);
+            this.PrintButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.PrintButton.Name = "PrintButton";
-            this.PrintButton.Size = new System.Drawing.Size(204, 28);
+            this.PrintButton.Size = new System.Drawing.Size(151, 23);
             this.PrintButton.TabIndex = 27;
             this.PrintButton.Text = "Print";
             this.PrintButton.UseVisualStyleBackColor = true;
@@ -243,10 +247,10 @@ namespace Haitham_s_Project
             // PrintAccountsCheck
             // 
             this.PrintAccountsCheck.AutoSize = true;
-            this.PrintAccountsCheck.Location = new System.Drawing.Point(692, 746);
-            this.PrintAccountsCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PrintAccountsCheck.Location = new System.Drawing.Point(715, 495);
+            this.PrintAccountsCheck.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.PrintAccountsCheck.Name = "PrintAccountsCheck";
-            this.PrintAccountsCheck.Size = new System.Drawing.Size(22, 21);
+            this.PrintAccountsCheck.Size = new System.Drawing.Size(15, 14);
             this.PrintAccountsCheck.TabIndex = 26;
             this.PrintAccountsCheck.UseVisualStyleBackColor = true;
             // 
@@ -254,18 +258,19 @@ namespace Haitham_s_Project
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(507, 741);
+            this.label1.Location = new System.Drawing.Point(576, 492);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 25);
+            this.label1.Size = new System.Drawing.Size(135, 17);
             this.label1.TabIndex = 25;
             this.label1.Text = "Print Only Orders";
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(478, 39);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchButton.Location = new System.Drawing.Point(435, 21);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(101, 27);
+            this.SearchButton.Size = new System.Drawing.Size(67, 22);
             this.SearchButton.TabIndex = 24;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -275,9 +280,10 @@ namespace Haitham_s_Project
             // 
             this.IDLabel.AutoSize = true;
             this.IDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.IDLabel.Location = new System.Drawing.Point(190, 42);
+            this.IDLabel.Location = new System.Drawing.Point(243, 23);
+            this.IDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(97, 25);
+            this.IDLabel.Size = new System.Drawing.Size(72, 17);
             this.IDLabel.TabIndex = 23;
             this.IDLabel.Text = "Enter ID:";
             // 
@@ -295,67 +301,11 @@ namespace Haitham_s_Project
             // 
             this.customersTableAdapter.ClearBeforeFill = true;
             // 
-            // Order_ID
-            // 
-            this.Order_ID.HeaderText = "Order ID";
-            this.Order_ID.MinimumWidth = 8;
-            this.Order_ID.Name = "Order_ID";
-            this.Order_ID.ReadOnly = true;
-            this.Order_ID.Width = 150;
-            // 
-            // Employee_First_Name
-            // 
-            this.Employee_First_Name.HeaderText = "Employee First Name";
-            this.Employee_First_Name.MinimumWidth = 8;
-            this.Employee_First_Name.Name = "Employee_First_Name";
-            this.Employee_First_Name.ReadOnly = true;
-            this.Employee_First_Name.Width = 150;
-            // 
-            // Employee_Last_Name
-            // 
-            this.Employee_Last_Name.HeaderText = "Employee Last Name";
-            this.Employee_Last_Name.MinimumWidth = 8;
-            this.Employee_Last_Name.Name = "Employee_Last_Name";
-            this.Employee_Last_Name.ReadOnly = true;
-            this.Employee_Last_Name.Width = 150;
-            // 
-            // Order_Date
-            // 
-            this.Order_Date.HeaderText = "Order Date";
-            this.Order_Date.MinimumWidth = 8;
-            this.Order_Date.Name = "Order_Date";
-            this.Order_Date.ReadOnly = true;
-            this.Order_Date.Width = 150;
-            // 
-            // Shipped_Date
-            // 
-            this.Shipped_Date.HeaderText = "Shipped Date";
-            this.Shipped_Date.MinimumWidth = 8;
-            this.Shipped_Date.Name = "Shipped_Date";
-            this.Shipped_Date.ReadOnly = true;
-            this.Shipped_Date.Width = 150;
-            // 
-            // Ship_Via
-            // 
-            this.Ship_Via.HeaderText = "Ship Via";
-            this.Ship_Via.MinimumWidth = 8;
-            this.Ship_Via.Name = "Ship_Via";
-            this.Ship_Via.ReadOnly = true;
-            this.Ship_Via.Width = 150;
-            // 
-            // Ship_Country
-            // 
-            this.Ship_Country.HeaderText = "Ship Country";
-            this.Ship_Country.MinimumWidth = 8;
-            this.Ship_Country.Name = "Ship_Country";
-            this.Ship_Country.ReadOnly = true;
-            this.Ship_Country.Width = 150;
-            // 
             // Project
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 844);
+            this.ClientSize = new System.Drawing.Size(741, 549);
             this.Controls.Add(this.customerIDTextBox);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
@@ -376,8 +326,11 @@ namespace Haitham_s_Project
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.IDLabel);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Project";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project";
+            this.Load += new System.EventHandler(this.Project_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -412,12 +365,5 @@ namespace Haitham_s_Project
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Label IDLabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Order_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Employee_First_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Employee_Last_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Order_Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Shipped_Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ship_Via;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ship_Country;
     }
 }

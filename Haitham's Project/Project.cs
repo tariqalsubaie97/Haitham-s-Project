@@ -44,17 +44,20 @@ namespace Haitham_s_Project
                             ContactLabel.Text = (string)dt.Rows[0]["ContactName"];
                             ContactTitleLabel.Text = (string)dt.Rows[0]["ContactTitle"];
                             CountryLbl.Text = (string)dt.Rows[0]["Country"];
-                            PostalLabel.Text = (string)dt.Rows[0]["Postal"];
+                            PostalLabel.Text = (string)dt.Rows[0]["PostalCode"];
                             PhoneLabel.Text = (string)dt.Rows[0]["Phone"];
 
                             using (DataTable orderdt = new DataTable("Orders"))
                             {
-                                using (SqlCommand ordercmd = new SqlCommand("select *,E.FirstName, E.LastName from Orders where CustomerID=@CustomerID inner join Employees on EmployeeID = E.EmployeeID ", cn))
+                                using (SqlCommand ordercmd = new SqlCommand("select O.OrderID,E.FirstName, E.LastName,  P.ProductName, OrderDate,ShippedDate,S.CompanyName " +
+                                    "as ShipVia,ShipCountry from Orders as O inner join Employees as E on O.EmployeeID = E.EmployeeID " +
+                                    "inner join [Order Details] as OD on O.OrderID = OD.OrderID inner join Products as P on OD.ProductID= P.ProductID" +
+                                    " inner join Shippers as S on O.ShipVia=S.ShipperID  where O.CustomerID=@CustomerID ", cn))
                                 {
-                                    cmd.Parameters.AddWithValue("CustomerID", customerIDTextBox.Text);
+                                    ordercmd.Parameters.AddWithValue("CustomerID", customerIDTextBox.Text);
                                     SqlDataAdapter orderadapter = new SqlDataAdapter(ordercmd);
                                     orderadapter.Fill(orderdt);
-                                    dataGridView1 = orderdt;
+                                    dataGridView1.DataSource = orderdt;
                                 }
                             }
 
@@ -70,6 +73,16 @@ namespace Haitham_s_Project
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Project_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
