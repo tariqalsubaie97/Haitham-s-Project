@@ -58,6 +58,8 @@ namespace Haitham_s_Project
                                     SqlDataAdapter orderadapter = new SqlDataAdapter(ordercmd);
                                     orderadapter.Fill(orderdt);
                                     dataGridView1.DataSource = orderdt;
+                                   // List<string> orders = new List<string>();
+                                   
                                 }
                             }
 
@@ -83,6 +85,20 @@ namespace Haitham_s_Project
         private void Project_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            if ( PrintAccountsCheck.Checked)
+            {
+                string companyname = CompanyNameLabel.Text;
+                string contactname = ContactLabel.Text;
+                string contacttitle = ContactTitleLabel.Text;
+                string country = CountryLbl.Text;
+                string postal = PostalLabel.Text;
+                string phone = PhoneLabel.Text;
+                
+            }
         }
     }
 }
