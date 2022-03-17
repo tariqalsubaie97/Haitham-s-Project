@@ -29,7 +29,7 @@ namespace Haitham_s_Project
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.Reporting.UriReportSource uriReportSource1 = new Telerik.Reporting.UriReportSource();
+            Telerik.Reporting.TypeReportSource typeReportSource1 = new Telerik.Reporting.TypeReportSource();
             this.reportViewer1 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
@@ -38,21 +38,22 @@ namespace Haitham_s_Project
             this.reportViewer1.AccessibilityKeyMap = null;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.reportViewer1.Name = "reportViewer1";
-            uriReportSource1.Uri = "C:\\Users\\9228\\Desktop\\Haitham\'s Project\\Haitham\'s Project\\ReportTemplate.trdp";
-            this.reportViewer1.ReportSource = uriReportSource1;
+            typeReportSource1.TypeName = "Haitham_s_Project.Report1, \"Haitham\'s Project\", Version=1.0.0.0, Culture=neutral," +
+    " PublicKeyToken=null";
+            this.reportViewer1.ReportSource = typeReportSource1;
             this.reportViewer1.ShowPageNavigationControls = false;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(533, 292);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.ResumeLayout(false);

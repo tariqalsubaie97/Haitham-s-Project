@@ -14,6 +14,8 @@ namespace Haitham_s_Project
 {
     public partial class Project : Form
     {
+        public DataTable orderdt;
+
         public Project()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace Haitham_s_Project
         {
             try
             {
-                using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString))
+                using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connection"].ConnectionString))
                 {
                     if (cn.State == ConnectionState.Closed)
                         cn.Open();
@@ -98,7 +100,7 @@ namespace Haitham_s_Project
                 string country = CountryLbl.Text;
                 string postal = PostalLabel.Text;
                 string phone = PhoneLabel.Text;
-                Form2 form2 = new Form2(companyname, contactname, contacttitle, country, postal, phone);
+                Form2 form2 = new Form2(companyname, contactname, contacttitle, country, postal, phone, orderdt);
                 form2.Show();
                 this.Hide();
 

@@ -24,5 +24,15 @@ namespace Haitham_s_Project
             // TODO: Add any constructor code after InitializeComponent call
             //
         }
+
+        private void CompanyName_ItemDataBinding(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_ItemDataBound(object sender, EventArgs e)
+        {
+
+        }
     }
 }

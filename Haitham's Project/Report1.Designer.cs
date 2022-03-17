@@ -38,7 +38,6 @@ namespace Haitham_s_Project
             this.textBox12 = new Telerik.Reporting.TextBox();
             this.pageFooterSection1 = new Telerik.Reporting.PageFooterSection();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.sqlDataSource1 = new Telerik.Reporting.SqlDataSource();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // textBox4
@@ -116,6 +115,7 @@ namespace Haitham_s_Project
             this.CompanyName.Name = "CompanyName";
             this.CompanyName.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.2D), Telerik.Reporting.Drawing.Unit.Inch(0.2D));
             this.CompanyName.Value = "";
+            this.CompanyName.ItemDataBinding += new System.EventHandler(this.CompanyName_ItemDataBinding);
             // 
             // textBox7
             // 
@@ -218,6 +218,7 @@ namespace Haitham_s_Project
             // 
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(2D), Telerik.Reporting.Drawing.Unit.Inch(1.1D));
+            this.textBox10.ItemDataBound += new System.EventHandler(this.textBox10_ItemDataBound);
             // 
             // textBox12
             // 
@@ -228,10 +229,6 @@ namespace Haitham_s_Project
             // 
             this.pageFooterSection1.Height = Telerik.Reporting.Drawing.Unit.Inch(1D);
             this.pageFooterSection1.Name = "pageFooterSection1";
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.Name = "sqlDataSource1";
             // 
             // Report1
             // 
@@ -263,15 +260,9 @@ namespace Haitham_s_Project
         private Telerik.Reporting.TextBox textBox1;
         private Telerik.Reporting.TextBox textBox2;
         private Telerik.Reporting.TextBox textBox3;
-        private Telerik.Reporting.TextBox ContactTitle;
-        private Telerik.Reporting.TextBox ContactName;
-        private Telerik.Reporting.TextBox CompanyName;
         private Telerik.Reporting.TextBox textBox7;
         private Telerik.Reporting.TextBox textBox8;
         private Telerik.Reporting.TextBox textBox9;
-        private Telerik.Reporting.TextBox Phone;
-        private Telerik.Reporting.TextBox PostalCode;
-        private Telerik.Reporting.TextBox Country;
         private Telerik.Reporting.TextBox Invoice;
         private Telerik.Reporting.Table OrderTable;
         private Telerik.Reporting.TextBox textBox5;
@@ -280,6 +271,11 @@ namespace Haitham_s_Project
         private Telerik.Reporting.TextBox textBox4;
         private Telerik.Reporting.TextBox textBox6;
         private Telerik.Reporting.TextBox textBox11;
-        private Telerik.Reporting.SqlDataSource sqlDataSource1;
+        public Telerik.Reporting.TextBox ContactTitle;
+        public Telerik.Reporting.TextBox ContactName;
+        public Telerik.Reporting.TextBox Phone;
+        public Telerik.Reporting.TextBox PostalCode;
+        public Telerik.Reporting.TextBox Country;
+        public Telerik.Reporting.TextBox CompanyName;
     }
 }
