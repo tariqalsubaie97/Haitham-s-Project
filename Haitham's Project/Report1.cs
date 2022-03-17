@@ -19,6 +19,7 @@ namespace Haitham_s_Project
             //
             InitializeComponent();
 
+           // Form1 f1 = new Form1();
             //
             // TODO: Add any constructor code after InitializeComponent call
             //

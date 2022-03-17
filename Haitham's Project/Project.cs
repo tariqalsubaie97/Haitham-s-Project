@@ -51,15 +51,15 @@ namespace Haitham_s_Project
                             {
                                 using (SqlCommand ordercmd = new SqlCommand("select O.OrderID,E.FirstName as [Employee First Name], E.LastName as [Employee Last Name],  P.ProductName, OrderDate,ShippedDate,S.CompanyName " +
                                     "as ShipVia,ShipCountry from Orders as O inner join Employees as E on O.EmployeeID = E.EmployeeID " +
-                                    "inner join [Order Details] as OD on O.OrderID = OD.OrderID inner join Products as P on OD.ProductID= P.ProductID" +
-                                    " inner join Shippers as S on O.ShipVia=S.ShipperID  where O.CustomerID=@CustomerID ", cn))
+                                    "inner join [Order Details] as OD on O.OrderID = OD.OrderID inner join Products as P on OD.ProductID= P.ProductID " +
+                                    "inner join Shippers as S on O.ShipVia=S.ShipperID  where O.CustomerID=@CustomerID", cn))
                                 {
                                     ordercmd.Parameters.AddWithValue("CustomerID", customerIDTextBox.Text);
                                     SqlDataAdapter orderadapter = new SqlDataAdapter(ordercmd);
                                     orderadapter.Fill(orderdt);
                                     dataGridView1.DataSource = orderdt;
-                                   // List<string> orders = new List<string>();
-                                   
+                                    // List<string> orders = new List<string>();
+
                                 }
                             }
 
@@ -89,7 +89,7 @@ namespace Haitham_s_Project
 
         private void PrintButton_Click(object sender, EventArgs e)
         {
-            if ( PrintAccountsCheck.Checked)
+            if (PrintAccountsCheck.Checked)
             {
                 string companyname = CompanyNameLabel.Text;
                 string contactname = ContactLabel.Text;
@@ -97,7 +97,10 @@ namespace Haitham_s_Project
                 string country = CountryLbl.Text;
                 string postal = PostalLabel.Text;
                 string phone = PhoneLabel.Text;
-                
+                Form2 form2 = new Form2();
+                form2.Show();
+                this.Hide();
+
             }
         }
     }
