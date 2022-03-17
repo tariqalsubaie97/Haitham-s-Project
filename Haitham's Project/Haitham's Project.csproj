@@ -151,11 +151,11 @@
     <Compile Include="Report1.Designer.cs">
       <DependentUpon>Report1.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportViewerForm1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Report2.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ReportViewerForm1.Designer.cs">
-      <DependentUpon>ReportViewerForm1.cs</DependentUpon>
+    <Compile Include="Report2.Designer.cs">
+      <DependentUpon>Report2.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -176,8 +176,8 @@
     <EmbeddedResource Include="Report1.resx">
       <DependentUpon>Report1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportViewerForm1.resx">
-      <DependentUpon>ReportViewerForm1.cs</DependentUpon>
+    <EmbeddedResource Include="Report2.resx">
+      <DependentUpon>Report2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="NorthwindDataSet.xsc">
       <DependentUpon>NorthwindDataSet.xsd</DependentUpon>

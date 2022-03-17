@@ -40,10 +40,12 @@ namespace Haitham_s_Project
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.reportViewer1.Name = "reportViewer1";
-            uriReportSource1.Uri = "C:\\Users\\9228\\Desktop\\Haitham\'s Project\\Haitham\'s Project\\Report1.resx";
+            uriReportSource1.Uri = "C:\\Users\\9228\\Desktop\\Haitham\'s Project\\Haitham\'s Project\\ReportTemplate.trdp";
             this.reportViewer1.ReportSource = uriReportSource1;
+            this.reportViewer1.ShowPageNavigationControls = false;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // Form2
             // 

@@ -15,6 +15,12 @@ namespace Haitham_s_Project
         public Form2()
         {
             InitializeComponent();
+            // reportViewer1.DataBindings. = Project.companyname;
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
