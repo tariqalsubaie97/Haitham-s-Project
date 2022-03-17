@@ -85,6 +85,7 @@ namespace Haitham_s_Project
         private void Project_Load(object sender, EventArgs e)
         {
 
+
         }
 
         private void PrintButton_Click(object sender, EventArgs e)
@@ -97,7 +98,7 @@ namespace Haitham_s_Project
                 string country = CountryLbl.Text;
                 string postal = PostalLabel.Text;
                 string phone = PhoneLabel.Text;
-                Form2 form2 = new Form2();
+                Form2 form2 = new Form2(companyname, contactname, contacttitle, country, postal, phone);
                 form2.Show();
                 this.Hide();
 
