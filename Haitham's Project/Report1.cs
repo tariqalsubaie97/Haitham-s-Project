@@ -34,5 +34,15 @@ namespace Haitham_s_Project
         {
 
         }
+
+        private void table1_NeedDataSource(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void table1_ItemDataBinding(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+    }

@@ -117,4 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="sqlDataSource1.SelectCommand" xml:space="preserve">
+    <value>SELECT        O.OrderID, E.FirstName AS [Employee First Name], E.LastName AS [Employee Last Name], P.ProductName, O.OrderDate, O.ShippedDate, S.CompanyName AS ShipVia, O.ShipCountry
+FROM            Orders AS O INNER JOIN
+                         Employees AS E ON O.EmployeeID = E.EmployeeID INNER JOIN
+                         [Order Details] AS OD ON O.OrderID = OD.OrderID INNER JOIN
+                         Products AS P ON OD.ProductID = P.ProductID INNER JOIN
+                         Shippers AS S ON O.ShipVia = S.ShipperID
+WHERE        (O.CustomerID = @CustomerID)</value>
+  </data>
+  <data name="sqlDataSource2.ConnectionString" xml:space="preserve">
+    <value>Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Northwind;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False</value>
+  </data>
+  <data name="sqlDataSource2.SelectCommand" xml:space="preserve">
+    <value>
+SELECT        O.OrderID, E.FirstName AS [Employee First Name], E.LastName AS [Employee Last Name], P.ProductName, O.OrderDate, O.ShippedDate, S.CompanyName AS ShipVia, O.ShipCountry
+FROM            Orders AS O INNER JOIN
+                         Employees AS E ON O.EmployeeID = E.EmployeeID INNER JOIN
+                         [Order Details] AS OD ON O.OrderID = OD.OrderID INNER JOIN
+                         Products AS P ON OD.ProductID = P.ProductID INNER JOIN
+                         Shippers AS S ON O.ShipVia = S.ShipperID
+WHERE        (O.CustomerID = @CustomerID)</value>
+  </data>
 </root>

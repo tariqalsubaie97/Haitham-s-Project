@@ -94,16 +94,30 @@ namespace Haitham_s_Project
         {
             if (PrintAccountsCheck.Checked)
             {
+                string companyname = "********";
+                string contactname = "********";
+                string contacttitle = "********";
+                string country = "********";
+                string postal = "********";
+                string phone = "********";
+                string custID = customerIDTextBox.Text;
+                Form2 form2 = new Form2(companyname, contactname, contacttitle, country, postal, phone, custID);
+                form2.Show();
+                this.Hide();
+
+            }
+            else
+            {
                 string companyname = CompanyNameLabel.Text;
                 string contactname = ContactLabel.Text;
                 string contacttitle = ContactTitleLabel.Text;
                 string country = CountryLbl.Text;
                 string postal = PostalLabel.Text;
                 string phone = PhoneLabel.Text;
-                Form2 form2 = new Form2(companyname, contactname, contacttitle, country, postal, phone, orderdt);
+                string custID = customerIDTextBox.Text;
+                Form2 form2 = new Form2(companyname, contactname, contacttitle, country, postal, phone, custID);
                 form2.Show();
                 this.Hide();
-
             }
         }
     }
