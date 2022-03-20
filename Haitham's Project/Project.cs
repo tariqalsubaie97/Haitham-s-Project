@@ -101,7 +101,8 @@ namespace Haitham_s_Project
                 string postal = "********";
                 string phone = "********";
                 string custID = customerIDTextBox.Text;
-                Form2 form2 = new Form2(companyname, contactname, contacttitle, country, postal, phone, custID);
+                object data = dataGridView1.DataSource;
+                Form2 form2 = new Form2(companyname, contactname, contacttitle, country, postal, phone, custID, data);
                 form2.Show();
                 this.Hide();
 
